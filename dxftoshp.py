@@ -1,8 +1,10 @@
 # This is for extracting contour height from Korean dxf map
 
 # This use ezdxf moulde. https://pypi.org/project/ezdxf/0.6.2/
+# Also use pyshp module. http https://pypi.org/project/pyshp/
 
 import ezdxf
+import pyshp
 
 def print_entity(e):
     print("LINE on layer : %s\n" % e.dxf.layer)
@@ -26,8 +28,11 @@ msp=dwg.modelspace()
 # Korean contour is consisted of LWPOLYLINE, and layer name is F0017111,F0017114
 # Read each entity 'e', 
 for e in msp:
-    if e.dxftype()=='LWPOLYLINE':
+    if e.dxftype()=='LWPOLYLINE'&&:
         print(e.dxf.elevation)
 
+#w=shapefile.Writer('contour')
+#w.field('name','c','elevation')
 
+dwg.close()
 
