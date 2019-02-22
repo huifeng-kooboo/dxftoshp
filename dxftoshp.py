@@ -16,6 +16,11 @@ def print_entity(e):
 
 dwg=ezdxf.readfile("7111_7114.dxf")
 
+w=shapefile.Writer('contour',shapeType=13)
+w.field('Layer','C',size=20)
+w.field('Elevation','N',size=5)
+
+
 # if file not exit print error message then exit
 if dwg == 0 :
     print("file not exist")
@@ -23,24 +28,28 @@ if dwg == 0 :
 
 # there are three diffrent layout model space, paper spae, block
 # extract data from model space layout and assige data to dxf entity,msp.
+
 msp=dwg.modelspace()
-t=tuple()
+
 # Korean contour is consisted of LWPOLYLINE, and layer name is F0017111,F0017114
 # Read each entity 'e', 
+
 for e in msp:
     if e.dxftype()=='LWPOLYLINE':
-        if e.dxf.layer == 'F0017114':
-            t=e.get_points()
-#            print("this is point",t)
-#        if e.dxf.layer == 'F0017111' or e.dxf.layer == 'F0017114':
-#            t=e.vertices()
-#            print(t)
+        if e.dxf.layer == 'F0017111' or e.dxf.layer == 'F0017114':
+            xy=e.get_points()
+            xyz=[]
+            r=[]
             print(e.dxf.layer,e.dxf.elevation,e.dxf.count)
-            for x,y,a,b,c in t:
-                print(x,y,a,b,c)
+            for x,y,a,b,c in xy:
+                xyz=[x,y,e.dxf.elevation]
+                r.append(xyz)
+#            r.append(r[0])
+            w.linez([r])
+            w.record(e.dxf.layer,e.dxf.elevation)
+            print(r)
         else :
             pass
-#            print("this is not contour",e.dxf.layer)
     else :
         pass
 #        print("this is not LWPOLYLINE",e.dxftype())
@@ -48,4 +57,4 @@ for e in msp:
 #w=shapefile.Writer('contour')
 #w.field('name','c','elevation')
 
-
+w.close()
