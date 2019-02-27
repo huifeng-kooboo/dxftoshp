@@ -15,6 +15,8 @@ def print_entity(e):
 # modify later
 
 dwg=ezdxf.readfile("7111_7114.dxf")
+w=shapefile.Writer('contour',shapeType=13)
+w.field('name','c')
 
 # if file not exit print error message then exit
 if dwg == 0 :
@@ -38,6 +40,7 @@ for e in msp:
             print(e.dxf.layer,e.dxf.elevation,e.dxf.count)
             for x,y,a,b,c in t:
                 print(x,y,a,b,c)
+                w.linez(
         else :
             pass
 #            print("this is not contour",e.dxf.layer)
@@ -48,4 +51,4 @@ for e in msp:
 #w=shapefile.Writer('contour')
 #w.field('name','c','elevation')
 
-
+w.close()
