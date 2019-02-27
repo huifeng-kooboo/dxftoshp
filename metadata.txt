@@ -1,0 +1,39 @@
+# This file contains metadata for your plugin. Since 
+# version 2.0 of QGIS this is the proper way to supply 
+# information about a plugin. The old method of 
+# embedding metadata in __init__.py will 
+# is no longer supported since version 2.0.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=dxftoshp
+qgisMinimumVersion=3.0
+description=extract contour and transfer to shape file with elevation
+version=0.1
+author=Kim Yonghyun
+email=queenmedley@gmail.com
+
+about=This is useful for korean dxf map, which contoure consist of 2 layer. this plugins transfer 2 layer to shape file with elevation
+
+tracker=http://github.com/queenmedley/dxftoshp
+repository=http://github.com/queenmedley/dxftoshp
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=dxf, contour, elevation
+
+homepage=http://github.com/queenmedley/dxftoshp
+category=Vector
+icon=icon.png
+# experimental flag
+experimental=True
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
