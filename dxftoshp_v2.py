@@ -6,9 +6,6 @@
 import ezdxf
 import shapefile
 
-# Read file name first, this example use one file name
-# modify later
-
 dwg=ezdxf.readfile("7111_7114.dxf")
 
 w=shapefile.Writer('contour',shapeType=13)
