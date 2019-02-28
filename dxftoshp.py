@@ -200,4 +200,3 @@ class dxftoshp:
             # Do something useful here - delete the line containing pass and
             # substitute with your code.
             pass
-        this si thest

@@ -8,15 +8,15 @@ import shapefile
 
 class dxftoshp:
     def dxftoshp(self):
-        w=shapefile.Writer('contour',shapeType=13)
+        dwg=ezdxf.readfile(self.input)
+        w=shapefile.Writer(self.output,shapeType=13)
         w.field('Layer','C',size=20)
         w.field('Elevation','N',size=5)
 
-        dwg=ezdxf.readfile("7111_7114.dxf")
         msp=dwg.modelspace()
         for e in msp:
             if e.dxftype()=='LWPOLYLINE':
-                if e.dxf.layer == 'F0017111' or e.dxf.layer == 'F0017114':
+                if e.dxf.layer == 'F0017114' or e.dxf.layer == 'F0017114':
                     xy=e.get_points()
                     xyz=[]
                     r=[]
@@ -24,8 +24,8 @@ class dxftoshp:
                     for x,y,a,b,c in xy:
                         xyz=[x,y,e.dxf.elevation]
                         r.append(xyz)
-                    if e.dxf.closed :
-                        r.append(r[0])
+                    if e.closed :
+                       r.append(r[0])
                     else :
                         pass
                     w.linez([r])
@@ -36,6 +36,13 @@ class dxftoshp:
                 pass
         w.close()
 
-    def __init__(self):
-        print("it's start")
-        self.dxftoshp(self)
+    def __init__(self,inputname="7111_7114.dxf",outputname="contour"):
+        self.input=inputname
+        self.output=outputname
+
+def main():
+    d=dxftoshp()
+    d.dxftoshp()
+
+if __name__ == '__main__':
+    main()
