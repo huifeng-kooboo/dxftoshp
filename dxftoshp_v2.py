@@ -6,14 +6,6 @@
 import ezdxf
 import shapefile
 
-def print_entity(e):
-    print("LINE on layer : %s\n" % e.dxf.layer)
-    print("start point : %s\n" % e.dxf.start)
-    print("end point : %s\n" % e.dxf.end)
-
-# Read file name first, this example use one file name
-# modify later
-
 dwg=ezdxf.readfile("7111_7114.dxf")
 
 w=shapefile.Writer('contour',shapeType=13)
