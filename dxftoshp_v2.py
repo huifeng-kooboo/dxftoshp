@@ -6,11 +6,6 @@
 import ezdxf
 import shapefile
 
-def print_entity(e):
-    print("LINE on layer : %s\n" % e.dxf.layer)
-    print("start point : %s\n" % e.dxf.start)
-    print("end point : %s\n" % e.dxf.end)
-
 # Read file name first, this example use one file name
 # modify later
 
@@ -44,7 +39,10 @@ for e in msp:
             for x,y,a,b,c in xy:
                 xyz=[x,y,e.dxf.elevation]
                 r.append(xyz)
-#            r.append(r[0])
+            if e.closed :
+                r.append(r[0])
+            else : 
+                pass
             w.linez([r])
             w.record(e.dxf.layer,e.dxf.elevation)
             print(r)
