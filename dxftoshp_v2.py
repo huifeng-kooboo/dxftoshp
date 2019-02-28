@@ -14,9 +14,9 @@ w.field('Elevation','N',size=5)
 
 
 # if file not exit print error message then exit
-if dwg == 0 :
-    print("file not exist")
-    exit(1)
+#if dwg == 0 :
+#    print("file not exist")
+#    exit(1)
 
 # there are three diffrent layout model space, paper spae, block
 # extract data from model space layout and assige data to dxf entity,msp.
