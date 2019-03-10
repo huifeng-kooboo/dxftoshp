@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/plugins/dxftoshp" >
+    <qresource prefix="/plugins/dxftoshape" >
         <file>icon.png</file>
     </qresource>
 </RCC>

@@ -1,9 +1,9 @@
 #/***************************************************************************
 # dxftoshp
 #
-# extract contour and transfer to shape file with elevation
+# extract contour from dxf 
 #							 -------------------
-#		begin				: 2019-02-27
+#		begin				: 2019-03-04
 #		git sha				: $Format:%H$
 #		copyright			: (C) 2019 by Kim Yonghyun
 #		email				: queenmedley@gmail.com
@@ -38,15 +38,15 @@ LOCALES =
 # translation
 SOURCES = \
 	__init__.py \
-	dxftoshp.py dxftoshp_dialog.py
+	dxftoshape.py dxftoshape_dialog.py
 
-PLUGINNAME = dxftoshp
+PLUGINNAME = dxftoshape
 
 PY_FILES = \
 	__init__.py \
-	dxftoshp.py dxftoshp_dialog.py
+	dxftoshape.py dxftoshape_dialog.py
 
-UI_FILES = dxftoshp_dialog_base.ui
+UI_FILES = dxftoshape_dialog_base.ui
 
 EXTRAS = metadata.txt icon.png
 
@@ -65,7 +65,7 @@ PEP8EXCLUDE=pydev,resources.py,conf.py,third_party,ui
 #	* Windows:
 #	  AppData\Roaming\QGIS\QGIS3\profiles\default\python\plugins'
 
-QGISDIR=/home/office1/.local/share/QGIS/QGIS3/profiles/default/python/plugins/
+QGISDIR=/home/queenmedley/.local/share/QGIS/QGIS3/profiles/default/python/plugins/
 
 #################################################
 # Normally you would not need to edit below here

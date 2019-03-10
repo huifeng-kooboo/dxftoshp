@@ -9,27 +9,27 @@
 [general]
 name=dxftoshp
 qgisMinimumVersion=3.0
-description=extract contour and transfer to shape file with elevation
+description=Extracting contour layers from dxf
 version=0.1
 author=Kim Yonghyun
 email=queenmedley@gmail.com
 
-about=This is useful for korean dxf map, which contoure consist of 2 layer. this plugins transfer 2 layer to shape file with elevation
+about=Qgis the built-in "another DXF import" plugin causes the layer Elevation or z-valuer to be lost. This plugin simply extracts the layer from the dxf file  with elevation or z-value and converts to the shape file.
 
 tracker=http://github.com/queenmedley/dxftoshp
 repository=http://github.com/queenmedley/dxftoshp
 # End of mandatory metadata
 
-# Recommended items:
+Recommended items:exdxf v0.9, pyshp v2.10, (both mandatory)
 
 # Uncomment the following line and add your changelog:
-# changelog=
+#changelog=
 
 # Tags are comma separated with spaces allowed
-tags=dxf, contour, elevation
+tags=dxf, contour, elevation, z-value
 
 homepage=http://github.com/queenmedley/dxftoshp
-category=Vector
+category=Plugins
 icon=icon.png
 # experimental flag
 experimental=True
