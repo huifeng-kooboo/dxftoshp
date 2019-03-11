@@ -14,9 +14,9 @@ version=0.1
 author=Kim Yonghyun
 email=queenmedley@gmail.com
 
-about=Qgis the built-in "another DXF import" plugin causes the layer Elevation or z-valuer to be lost. This plugin simply extracts the layer from the dxf file  with elevation or z-value and converts to the shape file.
+about=The built-in plugin "another DXF import" causes the layer Elevation or z-valuer to be lost. This plugin simply extracts the layer from the dxf file with elevation or z-value maintained and converts to the shape file. It needs some modules installed. exdxf_v0.9(https://pypi.org/project/ezdxf), pyshp_v2.10(https://pypi.org/project/pyshp)
 
-tracker=http://github.com/queenmedley/dxftoshp
+tracker=http://github.com/queenmedley/dxftoshp/issues
 repository=http://github.com/queenmedley/dxftoshp
 # End of mandatory metadata
 
